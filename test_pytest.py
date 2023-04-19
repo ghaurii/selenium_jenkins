@@ -13,7 +13,8 @@ def teardown_function():
     driver.quit()
 
 
-@pytest.mark.parametrize("username, passwd", [("test_user", 'Test_pass'), ('test_user2', 'Test_pass2'), ('Test3', 'Test345')])
+@pytest.mark.parametrize("username, passwd",
+                         [("test_user", 'Test_pass'), ('test_user2', 'Test_pass2'), ('Test3', 'Test345'), ('Test2222', 'Pass2345')])
 def test_login(username, passwd):
     print("Logging in Alnafi dashboard")
     driver.find_element(By.ID, 'Username/ Email').send_keys(username)
